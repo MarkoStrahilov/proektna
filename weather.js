@@ -1,7 +1,3 @@
-// tokens
-const mapToken = 'pk.eyJ1IjoibXN0cmFoaWxvdiIsImEiOiJja3cybnk4OG8wMzI5MndweHpqamE1b3o1In0.rZTnuAklg7cwiqdL2Xicdw'
-
-
 const form = document.querySelector('form');
 const input = document.querySelector('input');
 const btn = document.querySelector('#search-btn')
@@ -22,7 +18,6 @@ form.addEventListener('submit', async function(e) {
         const res = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=712a3f2932621a75cf87e4e875febe7f`)
 
         // select elements
-
         const locationName = res.data.name;
         cityName(locationName)
         const cityTemperature = res.data.main.temp;
@@ -36,42 +31,31 @@ form.addEventListener('submit', async function(e) {
         windSpeed(cityWindSpeed, cityWindSpeedDeg)
         const cityHumidity = res.data.main.humidity
         humidity(cityHumidity)
-        document.querySelector('#search').value = '';
 
         // display map
-
         const longitude = res.data.coord.lon;
         const latitude = res.data.coord.lat;
-        
-        if(!longitude && !latitude) {
-            document.querySelector('#map').textContent = 'Please Select A Location First'
-        }
 
-        mapboxgl.accessToken = 'pk.eyJ1IjoibXN0cmFoaWxvdiIsImEiOiJja3cybnk4OG8wMzI5MndweHpqamE1b3o1In0.rZTnuAklg7cwiqdL2Xicdw';
+        mapboxgl.accessToken = 'pk.eyJ1IjoibXN0cmFoaWxvdjEyMyIsImEiOiJja3prNDlrNGswY3U5Mm9uejEya3ZuaXY5In0.ZrwGtirDiU47Vgea0ZgpaQ';
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
             center: [longitude, latitude],
-            zoom: 9
+            zoom: 8
         });
 
         //map markers
-        const marker = new mapboxgl.Marker()
+        new mapboxgl.Marker()
             .setLngLat([longitude, latitude])
             .addTo(map);
 
     } catch (err) {
-        console.log('OOPS AN ERROR OCCURRED', err)
+        alert("Sorry Can't Find That Location")
+        console.log(err)
     }
 })
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibXN0cmFoaWxvdiIsImEiOiJja3cybnk4OG8wMzI5MndweHpqamE1b3o1In0.rZTnuAklg7cwiqdL2Xicdw';
-const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11',
-    center: [-74.5, 40],
-    zoom: 9
-});
+
 
 const createNewImg = function(mySrc) {
     weatherImgInLocation.src = `https://openweathermap.org/img/w/${mySrc}.png`
@@ -106,18 +90,30 @@ function cityWeather(weather) {
 
 const mapBtn = document.querySelector('.btn-map')
 
+input.addEventListener('keyup', () => {
+    document.querySelector('.btn-map').disabled = false;
+})
 
-let count = 0;
+let showMap = true
 
 mapBtn.addEventListener('click', () => {
-    count++
-    if (count % 2 === 0) {
+
+    if (showMap === true) {
+
         document.querySelector('#map').style.display = 'initial';
         mapBtn.classList.add('map-btn-style');
         mapBtn.textContent = 'Collapse';
+
+
+        showMap = false
+
     } else {
-        document.querySelector('#map').style.display = 'none'
+
+        document.querySelector('#map').style.display = 'none';
         mapBtn.classList.remove('map-btn-style');
         mapBtn.textContent = 'Show Map';
+
+        showMap = true
     }
+
 })
