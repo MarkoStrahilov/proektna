@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,200;1,300;1,400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background: url('https://www.desktopbackground.org/download/o/2011/11/23/301566_beautiful-hd-wallpapers-weather-and-phenomena-backgrounds_1920x1080_h.jpg');
+}
+
+main {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    color: #fff;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search {
+    width: 60%;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+}
+
+#search-btn {
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 50%;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.fas {
+    color: #fff;
+}
+
+.container {
+    transform: translateY(3rem);
+    width: 85%;
+    margin: auto;
+    background: url('https://cdn.pixabay.com/photo/2016/03/27/07/32/clouds-1282314_960_720.jpg');
+    background-size: cover;
+    text-align: center;
+    border-radius: 2rem;
+}
+
+.cityName {
+    width: 100%;
+    font-size: 2.5rem;
+    margin-bottom: 1.3rem;
+}
+
+.element-styles {
+    text-align: start;
+    font-size: 1.5rem;
+    padding: .5rem;
+}
+
+.imgStyle {
+    width: 100px;
+    height: 100px;
+}
+
+.style {
+    text-align: center;
+}
+
+span {
+    font-size: 3rem;
+    padding-right: 0.7rem;
+    color: #c3d100;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weatherStyles {
+    padding: 1rem;
+}
+
+.myStyle {
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.weatherStyles h3 {
+    display: none;
+    color: #303030;
+    padding: 1rem;
+}
+
+.location-map-container {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.btn-map {
+    padding: .5rem 1.5rem;
+    background-color: #f0ad4e;
+    border: none;
+    border-radius: 1rem;
+    transition: all .3s linear;
+}
+
+.btn-map:hover {
+    box-shadow: 1px 11px 8px -3px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 11px 8px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 11px 8px -3px rgba(0, 0, 0, 0.75);
+    background: #c3d100;
+}
+
+#map {
+    display: none;
+    width: 400px;
+}
+
+.map-container {
+    text-align: center;
+    transform: translateX(-200px);
+}
+
+.map-btn-style {
+    background: #5cb85c;
+}

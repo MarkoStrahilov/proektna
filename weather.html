@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="weather.css">
+    <script src="https://kit.fontawesome.com/3a58b25ffd.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css' rel='stylesheet' />
+
+    <title>Weather App</title>
+</head>
+
+<body>
+    <main>
+        <h1 id="location-title">Search Locations And See Whats The Weather Like There</h1>
+        <form>
+            <input type="text " name="searchLocation" id="search" placeholder="Search A City & Country Or Continent ">
+            <button id="search-btn"><i class="fas fa-search fa-2x "></i></button>
+        </form>
+        <div class="container">
+            <h2 class="weatherinLocation cityName ">Location Name</h2>
+            <div class="flex ">
+                <div class="weatherStyles myStyle ">
+                    <h2 class="temperatureinLocation element-styles">Temperature</h2>
+                </div>
+                <div class="weatherStyles ">
+                    <h3>Wind Speed</h3>
+                    <h2 class="windSpeedInLocation element-styles">Wind Speed</h2>
+                </div>
+                <div class="weatherStyles">
+                    <h3>Huminidy</h3>
+                    <h2 class="humidityInLocation element-styles">Humidity</h2>
+                </div>
+                <div class="weatherStyles ">
+                    <h3>Weather</h3>
+                    <h2 class="theWeatherInLocation element-styles">Weather</h2>
+                </div>
+                <div>
+                    <img class="weatherImgInLocation element-styles" src="https://openweathermap.org/img/w/01d.png " alt="img " width="80px " height="80px ">
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="location-map">
+        <div class="location-map-container">
+            <button class="btn-map">Show Map</button>
+        </div>
+        <div class="map-container">
+            <div id='map'></div>
+        </div>
+    </div>
+
+    <script src="weather.js "></script>
+</body>
+
+</html>
