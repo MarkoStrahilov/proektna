@@ -16,8 +16,8 @@ form.addEventListener('submit', async function(e) {
         e.preventDefault()
         const inputValue = form.elements.searchLocation.value;
         const res = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=712a3f2932621a75cf87e4e875febe7f`)
-
-        // select elements
+        console.log(res.data)
+            // select elements
         const locationName = res.data.name;
         cityName(locationName)
         const cityTemperature = res.data.main.temp;
@@ -37,6 +37,9 @@ form.addEventListener('submit', async function(e) {
         const latitude = res.data.coord.lat;
 
         mapboxgl.accessToken = 'pk.eyJ1IjoibXN0cmFoaWxvdjEyMyIsImEiOiJja3prNDlrNGswY3U5Mm9uejEya3ZuaXY5In0.ZrwGtirDiU47Vgea0ZgpaQ';
+
+        // Graphics Library. Mapbox GL allows you to use custom styles designed in Mapbox Studio
+
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
@@ -45,6 +48,7 @@ form.addEventListener('submit', async function(e) {
         });
 
         //map markers
+
         new mapboxgl.Marker()
             .setLngLat([longitude, latitude])
             .addTo(map);
