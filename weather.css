@@ -9,13 +9,11 @@
 
 body {
     background: url('https://www.desktopbackground.org/download/o/2011/11/23/301566_beautiful-hd-wallpapers-weather-and-phenomena-backgrounds_1920x1080_h.jpg');
-}
-
-main {
-    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 50vh;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
 }
 
 h1 {
@@ -113,7 +111,7 @@ span {
 
 .location-map-container {
     text-align: center;
-    margin: 1.5rem 0;
+    margin: 4rem 0;
 }
 
 .btn-map {
@@ -126,8 +124,6 @@ span {
 
 .btn-map:hover {
     box-shadow: 1px 11px 8px -3px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 1px 11px 8px -3px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 11px 8px -3px rgba(0, 0, 0, 0.75);
     background: #c3d100;
 }
 
