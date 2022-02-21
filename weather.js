@@ -101,7 +101,7 @@ let showMap = true
 
 mapBtn.addEventListener('click', () => {
 
-    if (showMap === true) {
+    if (showMap) {
 
         document.querySelector('#map').style.display = 'initial';
         mapBtn.classList.add('map-btn-style');
